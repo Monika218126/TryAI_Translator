@@ -38,16 +38,26 @@ Linguify is a full-stack web application that enables real-time language transla
 ## 📁 Project Structure
 
 linguify/
+
 │
+
 ├── static/
+
 │   ├── style.css
+
 │   └── script.js
+
 │
+
 ├── templates/
+
 │   └── index.html
+
 │
 ├── app.py
+
 ├── requirements.txt
+
 └── README.md
 
 ---
