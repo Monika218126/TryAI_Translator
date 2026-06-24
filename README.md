@@ -40,7 +40,6 @@ Linguify is a full-stack web application that enables real-time language transla
 linguify/
 
 │
-
 ├── static/
 
 │   ├── style.css
@@ -48,7 +47,6 @@ linguify/
 │   └── script.js
 
 │
-
 ├── templates/
 
 │   └── index.html
