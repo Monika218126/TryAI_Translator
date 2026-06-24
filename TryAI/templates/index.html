@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinguaAI Translator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌍 Linguify Translator</h1>
+<p class="subtitle">
+Translate Any Language Instantly
+</p>
+<button
+type="button"
+onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+<form method="POST">
+
+<textarea
+id="textInput"
+name="text"
+placeholder="Enter text here..."
+required>
+</textarea>
+
+<button type="button"
+onclick="startVoice()">
+🎤 Speak
+</button>
+
+<br><br>
+
+<label>Source Language</label>
+
+<select name="source">
+
+<option value="auto">
+Auto Detect
+</option>
+
+<option value="en">
+English
+</option>
+
+<option value="ta">
+Tamil
+</option>
+
+<option value="hi">
+Hindi
+</option>
+
+</select>
+
+<br><br>
+
+<label>Target Language</label>
+
+<select name="target">
+
+{% for lang in languages %}
+<option>{{ lang }}</option>
+{% endfor %}
+
+</select>
+
+<button type="submit">
+Translate
+</button>
+
+</form>
+
+{% if translated_text %}
+
+<div class="result">
+
+<h3>Detected Language:</h3>
+<p>{{ detected_lang }}</p>
+
+<h3>Translation:</h3>
+
+<p id="translation">
+{{ translated_text }}
+</p>
+
+<button onclick="copyText()">
+📋 Copy
+</button>
+
+<br><br>
+
+<audio controls>
+<source src="{{ url_for('static',
+filename='audio/output.mp3') }}"
+type="audio/mp3">
+</audio>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<div class="right-panel">
+
+<img
+src="{{ url_for('static', filename='BestP.jpg') }}"
+alt="AI Translator">
+
+</div>
+
+<script src="{{ url_for('static',
+filename='script.js') }}"></script>
+
+</body>
+</html>
